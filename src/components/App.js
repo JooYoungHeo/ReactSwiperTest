@@ -27,11 +27,11 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <Swiper {...params}>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/product/thumbs/9/87.jpg"/></div>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/product/thumbs/9/90.jpg"/></div>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/product/thumbs/9/91.jpg"/></div>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/product/thumbs/9/92.jpg"/></div>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/product/thumbs/9/94.jpg"/></div>
+          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy.jpg"/></div>
+          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy2.jpg"/></div>
+          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy3.jpg"/></div>
+          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy4.jpg"/></div>
+          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy5.jpg"/></div>
         </Swiper>
       </div>
     );
