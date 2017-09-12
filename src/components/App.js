@@ -1,38 +1,18 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import styles from './App.css';
+import TestSwiper1 from './TestSwiper1';
+import TestSwiper2 from './TestSwiper2';
+import TestSwiper3 from './TestSwiper3';
 
 class App extends React.Component {
   render() {
-
-    const params = {
-      pagination: '.swiper-pagination',
-      paginationCustomizedClass: styles.customizeSwiperPagination,
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      spaceBetween: 30,
-      slidePerView: 1,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      nextButtonCustomizedClass: styles.customizeSwiperButton,
-      prevButtonCustomizedClass: styles.customizeSwiperButton
-    };
-
-    const divStyle = {
-      height: '200px',
-      textAlign: 'center'
-    };
-
     return (
-      <div className={styles.container}>
-        <Swiper {...params}>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy.jpg"/></div>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy2.jpg"/></div>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy3.jpg"/></div>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy4.jpg"/></div>
-          <div style={divStyle}><img src="https://dsh602wr9lxr7.cloudfront.net/suzy5.jpg"/></div>
-        </Swiper>
+      <div>
+        <TestSwiper1/>
+        <hr/>
+        <TestSwiper2/>
+        <hr/>
+        <TestSwiper3/>
       </div>
     );
   }
