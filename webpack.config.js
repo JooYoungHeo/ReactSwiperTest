@@ -19,6 +19,20 @@ module.exports = {
           cacheDirectory: true,
           presets: ['es2015','react']
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]__[hash:base64:5]'
+            }
+          }
+        ]
       }
     ]
   }
