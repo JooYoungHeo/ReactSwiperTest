@@ -1,9 +1,39 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
 import styles from './App.css';
+import axios from 'axios';
 
 class TestSwiper2 extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      imgList: []
+    };
+
+    this.setImgList();
+  }
+
+  setImgList() {
+    axios.get('http://example.com/').then(result => {
+      this.setState({
+        imgList: result.data
+      });
+    });
+  }
+
   render() {
+    let imgList = this.state.imgList;
+    let divList = [];
+    let url = "http://example.com/";
+
+    for (let i = 0 ; i < imgList.length ; i++) {
+      let src = url + imgList[i];
+      divList.push(
+        <div key={i} style={divStyle}><img width="200px" height="200px" src={src} /></div>
+      )
+    }
+
     const params = {
       pagination: '.swiper-pagination',
       paginationCustomizedClass: styles.customizeSwiperPagination,
@@ -23,17 +53,13 @@ class TestSwiper2 extends React.Component {
       textAlign: 'center'
     };
 
-    return (
+    return (divList.length > 0)? (
       <div className={styles.container}>
         <Swiper {...params}>
-          <div style={divStyle}><img width="200px" height="200px" src="https://dsh602wr9lxr7.cloudfront.net/suzy3.jpg"/></div>
-          <div style={divStyle}><img width="200px" height="200px" src="https://dsh602wr9lxr7.cloudfront.net/suzy4.jpg"/></div>
-          <div style={divStyle}><img width="200px" height="200px" src="https://dsh602wr9lxr7.cloudfront.net/suzy5.jpg"/></div>
-          <div style={divStyle}><img width="200px" height="200px" src="https://dsh602wr9lxr7.cloudfront.net/suzy.jpg"/></div>
-          <div style={divStyle}><img width="180px" height="200px" src="https://dsh602wr9lxr7.cloudfront.net/suzy2.jpg"/></div>
+          {divList}
         </Swiper>
       </div>
-    );
+    ): (<div></div>);
   }
 }
 
